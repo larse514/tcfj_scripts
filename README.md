@@ -1,5 +1,24 @@
 # tcfj_scripts
 
+CREATE TABLE Donors (
+	donar_id INT NOT NULL AUTO_INCREMENT,
+	donar_name VARCHAR(100) NOT NULL,
+	date_started DATE,
+	PRIMARY KEY (donar_id),
+	UNIQUE (donar_name)
+
+)
+
+CREATE TABLE Recipients (
+	recipient_id INT NOT NULL AUTO_INCREMENT,
+	recipient_name VARCHAR(100) NOT NULL,
+	date_started DATE,
+	PRIMARY KEY (recipient_id),
+	UNIQUE (recipient_name)
+
+)
+
+
 CREATE TABLE Shifts(
 	shift_id INT NOT NULL AUTO_INCREMENT,
 	donar_id int,
@@ -24,18 +43,12 @@ CREATE TABLE Shifts(
 
 );
 
-CREATE TABLE Donors (
-	donar_id INT NOT NULL AUTO_INCREMENT,
-	donar_name VARCHAR(100) NOT NULL,
-	date_started DATE,
-	PRIMARY KEY (donar_id)
 
-)
+insert into Recipients (recipient_name, date_started) values ("St.Stephen's Homeless Shelter",CURDATE())
 
-CREATE TABLE Recipients (
-	recipient_id INT NOT NULL AUTO_INCREMENT,
-	recipient_name VARCHAR(100) NOT NULL,
-	date_started DATE,
-	PRIMARY KEY (recipient_id)
+insert into Donors (donar_name, date_started)  values ("Seward Co-Op Friendship Store", CURDATE())
 
-)
+//insert scripts
+
+insert into Recipients (recipient_name, date_started) values ("Seward Co-Op Friendship Store",CURDATE())
+
